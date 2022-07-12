@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+body {
+    font-family: 'Titillium Web', sans-serif;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    
+}
+html{
+
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    
+}
+.nav-btn{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 3em;
+}
+
+.open-btn{
+    border-radius:  5px 5px 5px 5px;
+    position: fixed;
+    top: 0.8em;
+    right: 0.8em;
+    color: white;
+}
+.nav{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+   
+}
+
+.nav.visible{
+    transform: translateX(0);
+}
+
+
+.nav-blue{
+        background-color: rgb(251,235,4);
+        width: 60%;
+        max-width: 420px;
+        min-width: 320px;
+        transition-delay: .3s;
+}
+.nav-blue.visible{
+    transition-delay: 0s;
+}
+.nav-softblue.visible{
+    transition-delay: 0.2s;
+}
+.nav-white.visible{
+    transition-delay: 0.4s;
+}
+
+.nav-softblue{
+    background-color: rgb(251,235,4);
+    width: 95%;
+    transition-delay: .2s;
+
+    
+}
+
+.nav-white{
+    padding: 3em;
+    background-color: white;
+    width: 71%;
+    right: 0px;
+    top: 0px;
+    transition-delay: .1s;
+
+ 
+}
+.close-btn{
+    position: absolute;
+    top: 40px;
+    right: 30px;
+    opacity: 0.6;
+}
+.list{
+    list-style-type: none;
+    padding: 0;
+}
+.list li{
+    clear: both;
+    margin: 5em 0;
+}
+.list li a{
+    color: rgb(24, 24, 24);
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: font-size .2s linear;
+}
+.list li a:hover{
+    color: rgb(251,235,4);
+    font-size: 22px;
+}
+
+.presentation{
+    
+
+    height: 60vh;
+    background-image: url('../images/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;}
+.gradient{
+    height: 100%;
+    background-image: linear-gradient(to bottom right, rgba(6, 6, 6, 0.5), rgba(122, 122, 122, 0.3));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.gradient img{
+    width: 15%;
+    display: inline-block;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 10px 25px;
+}
+
+
+.gradient h1{
+    color: white;
+    font-size: 4em;
+    text-transform: uppercase;
+    text-shadow: 1px 3px 10px black;
+}
+
+#titulo{
+
+    font-size: 6vh;
+}
+.secoes{
+padding: 1em;
+max-width: 100%;
+
+
+}
+.secoes h1{
+    text-align: center;
+    font-size: 8em;
+    color:rgb(88, 88, 88);
+    font-size: 3em;
+    text-transform: uppercase;
+}
+.cards{
+    
+    display: flex;
+    padding: 2em;
+}
+.cards img{
+  
+    margin: .3em;
+    border-radius: 50%;
+    width: 5em;
+}
+#moça1{
+    display: flex;
+    flex-direction: row-reverse;
+}
+footer{
+    color: white;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(88, 88, 88);
+    color: white;
+    height: 5vh;
+}
+footer a{
+    font-style: none;
+    text-decoration: none;
+    color: white;
+    margin: 1em;
+    font-size: 1.3em;
+    transition: color .5s linear;
+}
+footer a:hover{
+    color: rgb(104, 212, 245);
+}
+q{
+    font-family: 'Dancing Script', cursive;
+    font-size: 5em;
+}
+
+/* Animação */
+[data-anime]{
+    opacity: 0;
+    transition: .5s;
+}
+[data-anime = "left"]{
+    transform: translateX(0);
+    
+}
+[data-anime = "right"]{
+    transform: translateX(0);
+    
+}
+
+
+
+
+[data-anime].animate{
+    opacity: 1;
+    transform: translateX(0) !important;
+    
+}
+
+.main-content{
+
+    width: 100%;
+    z-index: 1;
+}
+
+header{
+    position: relative;
+    z-index: 200;
+}
+
+
+
+
+/*Desktop*/
+
+@media (min-width: 750px){
+    
+    html{
+        scroll-padding: 8em;
+    }
+
+    .nav-btn{
+        display: none;
+    }
+    
+    .nav{
+        display: flex;
+        position: fixed;
+        height: 1vh;
+        min-width: 100%;
+        transform: translateX(0);
+        flex-direction: row-reverse;
+        
+        
+    }
+    .nav-softblue, .nav-blue{
+        background-color: transparent;
+        min-width: 100%;
+    }
+    .nav-white{
+        background-color: transparent;
+        position: fixed;
+        min-width: 100%;
+        display: flex;
+        align-items: center;
+        transition: all .3s;
+        
+    }
+
+    .list{
+        position: fixed;
+        display: flex;
+        top: 0;
+        margin: 0;
+        padding: 0;
+        right: 0;
+        height: 100%;
+        align-items: center;
+    }
+    .list li{
+        clear: both;
+        margin: 1em;
+        padding: 0;
+        display: inline-block;
+    }
+    .list li a{
+        color: white;
+        text-shadow: 1px 3px 10px black;
+        font-size: 1em;
+    }
+    .list li a:hover{
+        color: rgb(251,235,4);
+        font-size: 1em;
+    }
+
+    
+    .scrolled{
+        
+        background-color: white !important; 
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;;
+        
+    }
+    .scrolled a{
+        color: black !important;
+        text-shadow: none !important;
+    }
+
+    .scrolled a:hover{
+        color: rgb(251,235,4) !important;
+    }
+
+
+
+}
